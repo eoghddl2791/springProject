@@ -276,7 +276,18 @@
 		}); // ajax
 	}); // $(document) */
 	$(document).ready(function(){
-		
+		$.ajax({
+			type: 'post',
+			url: '/springProject/member/followCheck',
+			data: {'follow_nickname' : 'UserId_120329'},
+			dataType: 'json',
+			success: function(data){
+				
+			},
+			error: function(err){
+				console.log(err);
+			}
+		});
 	});
 </script>
 </html>

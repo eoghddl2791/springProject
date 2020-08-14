@@ -12,7 +12,7 @@ $('.following').click(function(){
 //팔로우+ 버튼 클릭
 $('#followBtn').click(function(){
 	if($('#followCheck').val() == 'uncheck'){
-		
+		$.ajax
 	}else if($('#followCheck').val() == 'check'){
 		
 	}
@@ -26,8 +26,8 @@ function likeClick(seq){
 			url: '/springProject/member/like',
 			data: {'seq' : seq},
 			success: function(){
-				$('.like'+items.board_seq).html('<i class="fas fa-heart" style="color:red;"></i>');
-				$('#likeCheck'+items.board_seq).val('like');
+				$('.like'+seq).html('<i class="fas fa-heart" style="color:red;"></i>');
+				$('#likeCheck'+seq).val('like');
 			},
 			error: function(){
 				console.log(err);
@@ -39,8 +39,8 @@ function likeClick(seq){
 			url: '/springProject/member/unlike',
 			data: {'seq' : seq},
 			success: function(){
-				$('.like'+items.board_seq).html('<i class="far fa-heart"></i>');
-				$('#likeCheck'+items.board_seq).val('unlike');
+				$('.like'+seq).html('<i class="far fa-heart"></i>');
+				$('#likeCheck'+seq).val('unlike');
 			},
 			error: function(err){
 				console.log(err);
