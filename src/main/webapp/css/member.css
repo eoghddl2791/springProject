@@ -1,0 +1,8 @@
+@charset "UTF-8";
+th {font-size: 10pt; background-color: #dddddd;}
+td {font-size: 8pt;}
+
+#addressA:link {color: black; text-decoreation: none;}
+#addressA:visited {color: black; text-decoreation: none;}
+#addressA:hover {color: green; text-decoreation: none; font-weight:bold;}
+#addressA:active {color: black; text-decoreation: none;}

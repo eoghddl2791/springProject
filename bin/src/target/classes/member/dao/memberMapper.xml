@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="memberSQL">
+ 
+ 	<insert id="write" parameterType="member">
+ 		insert into member values(#{name},#{id},#{pwd},#{gender},#{email1}
+ 		,#{email2},#{tel1},#{tel2},#{tel3},#{zipcode},#{addr1},#{addr2},sysdate)
+ 	</insert>
+ 	
+ 	<!-- 로그인 -->
+ 	<select id="login" parameterType="java.util.Map" resultType="member">
+ 		select * from member where id = #{id} and pwd = #{pwd}
+ 	</select>
+ 	
+ 	<select id="checkId" resultType="member" parameterType="String">
+ 		select * from member where id = #{id}
+ 	</select>
+ 	
+ 	<select id="postSearch" parameterType="java.util.Map" resultType="zipcode">
+ 		select * from newzipcode where sido like '%'||#{sido}||'%' 
+ 		and nvl(sigungu,'0') like '%'||#{sigungu}||'%' and roadname like '%'||#{roadname}||'%'
+ 	</select>
+ 	
+ 	<!-- <select id="getMember" resultType="member" parameterType="String">
+ 		select * from member where id=#{id}
+ 	</select> -->
+ 	
+ 	<update id="modify" parameterType="member">
+ 		update member set name=#{name}, pwd=#{pwd}, gender=#{gender}, email1=#{email1}
+ 		, email2=#{email2}, tel1=#{tel1}, tel2=#{tel2}, tel3=#{tel3}, zipcode=#{zipcode}
+ 		, addr1=#{addr1}, addr2=#{addr2}, logtime=sysdate where id=#{id}
+ 	</update>
+ 	
+ 	<select id="infinityScroll" resultType="myblog" parameterType="java.util.Map">
+		select * from(select rownum rn, tt.*from (select * from mybloglist order by seq desc)tt)
+ 		where rn<![CDATA[ >= ]]>#{startNum} and rn<![CDATA[ <= ]]>#{endNum}
+	</select>
+	
+	<insert id="like" parameterType="java.util.Map">
+		insert into liketable (board_seq, member_id) values(#{seq}, #{id})
+	</insert>
+	
+	<delete id="unlike" parameterType="java.util.Map">
+		delete liketable where member_id=#{id}
+	</delete>
+	
+	<select id="likeCheck" parameterType="String" resultType="like">
+		select * from liketable where member_id=#{id}
+	</select>
+	
+ </mapper>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
