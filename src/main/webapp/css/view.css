@@ -1,0 +1,152 @@
+@charset "UTF-8";
+header{
+	position: fixed;
+	width: 100%;
+}
+body, html{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+}
+#morip{
+	width: 120px;
+	height: 70px;
+	cursor: pointer;
+}
+#person{
+	width: 30px;
+	height: 30px;
+	float: lift;
+}
+.navber-header{
+	display:flex;
+}
+.step1{
+	width:30%;
+	margin:auto;
+}
+.step2{
+	width:65%;
+	margin:auto;
+}
+.step3{
+	width:5%;
+	margin:auto;
+	display:flex;
+	
+}
+.background{
+	width: 100%;
+	height: 500px;
+}
+#background{
+	top: -50px;
+	width: 100%;
+	height: 300px;
+}
+.cmt{
+	position: fixed;
+	float: left;
+	width: 1%;
+	cursor: pointer;
+}
+#cmt-img{
+	width: 30px;
+	height: 30px;
+}
+.content{
+	margin: auto;
+	display: flex;
+	width: 60%;
+}
+#cmt-modal{
+	height: 100%;
+	width: 100%;
+}
+#cmt-modal-title{
+	text-align: left;
+}
+.modal{
+	text-align: center;
+}
+@media screen and (min-width: 768px) { 
+	.modal:before {
+			display: inline-block;
+			vertical-align: top;
+			height: 100%;
+	}
+}
+.modal-dialog {
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+}
+.modal-header{
+	display: flex;
+}
+#cmt-title{
+	width: 95%;
+}
+#x-btn{
+	cursor: pointer;
+}
+.modal-body{
+	padding-bottom: 0px;
+}
+.cmt-username{
+	height: 30px;
+	font-size:11px;
+}
+#userImage{
+	border-radius: 70%;
+	width: 25px;
+	height: 25px;
+}
+.cmt-content{
+	margin-bottom: 0px;
+	margin-left: 0px;
+	white-space: pre-wrap;
+	font-size:11px;
+}
+.modal-footer{
+	display: flex;
+}
+.cmt-textarea{
+	margin-left: 15px;
+	float: left;
+}
+#cmt-text{
+	float: left;
+	margin-top: 5px;
+	resize : none;
+	margin: auto;
+}
+.cmt-btn{
+	margin-left: 5px;
+	
+}
+#cmt-btn{
+	margin-top: 5px;
+	height: 27px;
+	width : 50px;
+	margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
